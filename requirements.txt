@@ -1,0 +1,7 @@
+streamlit
+boto3
+langgraph
+openai
+pandas
+yfinance
+python-dotenv
