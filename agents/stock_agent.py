@@ -21,15 +21,15 @@ def run_agent():
     print(data.tail())
 
     # Step 4: Ask Groq for analysis
-    user_prompt = "Based on AAPL's recent trends, should I consider buying the stock?"
+    user_prompt = "Based on AAPL's recent trends, should I consider buying the stock now with the stats on how much % profit/loss I can make?"
 
     response = client.chat.completions.create(
-        model="mixtral-8x7b-32768",
-        messages=[
-            {"role": "system", "content": "You are a financial assistant AI."},
-            {"role": "user", "content": user_prompt}
-        ]
-    )
+    model="llama3-70b-8192",  # Updated to supported Groq model
+    messages=[
+        {"role": "system", "content": "You are a financial assistant AI."},
+        {"role": "user", "content": user_prompt}
+    ]
+)
 
     ai_reply = response.choices[0].message.content
     print("\n📊 AI Recommendation:")
