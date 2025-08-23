@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-import openai
+from openai import OpenAI
 from utils.fetch_stock_data import get_stock_data
 
 # Step 1: Load environment variables
@@ -8,8 +8,10 @@ load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 # Step 2: Set up OpenAI client for Groq
-openai.api_key = GROQ_API_KEY
-openai.api_base = "https://api.groq.com/openai/v1"  # Groq's endpoint
+client = OpenAI(
+    api_key=GROQ_API_KEY,
+    base_url="https://api.groq.com/openai/v1"
+)
 
 def run_agent():
     print("Running stock agent...")
@@ -21,14 +23,14 @@ def run_agent():
     # Step 4: Ask Groq for analysis
     user_prompt = "Based on AAPL's recent trends, should I consider buying the stock?"
 
-    response = openai.ChatCompletion.create(
-        model="mixtral-8x7b-32768",  # Replace with available Groq model
+    response = client.chat.completions.create(
+        model="mixtral-8x7b-32768",
         messages=[
             {"role": "system", "content": "You are a financial assistant AI."},
             {"role": "user", "content": user_prompt}
         ]
     )
 
-    ai_reply = response.choices[0].message["content"]
+    ai_reply = response.choices[0].message.content
     print("\n📊 AI Recommendation:")
     print(ai_reply)
