@@ -1,4 +1,4 @@
-**﻿# Stock Market Agent**
+**﻿Stock Market Agent**
 
 A lightweight Agentic AI stock recommendation agent that fetches real-time stock data, 
 autonomously analyzes investment trends using LLMs (Groq LLaMA3), and returns actionable buy/sell insights via CLI
@@ -64,5 +64,6 @@ stock-market-agent/
 * Integrate AWS Lambda for backend automation
 
 * Schedule daily reports via cron jobs
+
 
 
