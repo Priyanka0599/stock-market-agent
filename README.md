@@ -18,21 +18,9 @@ autonomously analyzes investment trends using LLMs (Groq LLaMA3), and returns ac
 | `Git` + `GitHub` | Version control & collaboration           |
 
 
-│Project Structure: stock-market-agent/
-├── agents/
-│   └── stock_agent.py        # AI logic to analyze stock trends
-├── utils/
-│   └── fetch_stock_data.py   # Function to fetch stock data via yfinance
-├── main.py                   # CLI entrypoint to run the agent
-├── app.py                    # Streamlit app (Optional)
-├── .env                      # API key for Groq
-├── requirements.txt          # All dependencies
-└── README.md                 # You are here!
-
-
 1. Clone the repo:
 
-    git clone https://github.com/yourusername/stock-market-agent.git
+    git clone https://github.com/Priyanka0599/stock-market-agent.git
 
     cd stock-market-agent
 
@@ -67,6 +55,7 @@ autonomously analyzes investment trends using LLMs (Groq LLaMA3), and returns ac
 * Integrate AWS Lambda for backend automation
 
 * Schedule daily reports via cron jobs
+
 
 
 
